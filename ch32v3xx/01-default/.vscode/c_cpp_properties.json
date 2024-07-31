@@ -1,0 +1,41 @@
+{
+    "env": {
+        "defaultIncludePath": [
+            "${config:toolchain}/riscv-none-elf/include",
+            "${config:toolchain}/riscv-none-elf/include/c++/**"
+        ],
+        "defaultDefines": [ "__GNUC__", "CH32V30x" ],
+        "compiler": "${config:toolchain}/bin/riscv-none-elf-gcc.exe"
+      },
+    "configurations": [
+        {
+            "name": "Debug",
+            "includePath": [ "${defaultIncludePath}" ],
+            "defines": [ "${defaultDefines}", "DEBUG" ],
+            "intelliSenseMode": "gcc-arm",
+            "compilerPath": "${compiler}",
+            "configurationProvider": "ms-vscode.cmake-tools",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++17",
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db"
+            }
+        },
+        {
+            "name": "Release",
+            "includePath": [ "${defaultIncludePath}" ],
+            "defines": [ "${defaultDefines}" ],
+            "intelliSenseMode": "gcc-arm",
+            "compilerPath": "${compiler}",
+            "configurationProvider": "ms-vscode.cmake-tools",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++17",
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db"
+            }
+        }
+    ],
+    "version": 4
+}

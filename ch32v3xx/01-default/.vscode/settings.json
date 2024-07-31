@@ -1,0 +1,24 @@
+{
+    "cSpell.ignoreRegExpList": ["\\b[0-9A-Z_]+\\b"],
+    "cmake.generator": "Ninja",
+    "cmake.buildDirectory" : "${workspaceRoot}/build/${buildType}",
+    "cmake.configureEnvironment": { "CMAKE_EXPORT_COMPILE_COMMANDS": "on" },
+    // cortex-debug (Windows).
+    "cortex-debug.gdbPath.windows": "${env:USERPROFILE}/xpack-riscv-none-elf-gcc-13.2.0-2/bin/riscv-none-elf-gdb.exe",
+    "cortex-debug.pyocdPath.windows": "pyocd",
+    "cortex-debug.openocdPath.windows": "${env:USERPROFILE}/scoop/apps/openocd/current/bin/openocd.exe",
+    "cortex-debug.JLinkGDBServerPath.windows": "JLinkGDBServerCL.exe",
+    // cortex-debug (Linux).
+    "cortex-debug.gdbPath.linux": "riscv-none-elf-gdb",
+    "cortex-debug.pyocdPath.linux": "pyocd",
+    "cortex-debug.openocdPath.linux": "openocd",
+    "cortex-debug.JLinkGDBServerPath.linux": "JLinkGDBServerCLExe",
+    // Настройки проекта.
+    "executable": "${command:cmake.buildDirectory}/${workspaceFolderBasename}.elf",
+    "device": "CH32V307VCT6",
+    "svdFile" : "${workspaceRoot}/CH32V307xx.svd",
+    "targetFamily": "ch32v307xx",
+    //"jlink-id": "nucleo-f030", //-usb ${config:jlink-id},
+    "toolchain": "${env:USERPROFILE}/xpack-riscv-none-elf-gcc-13.2.0-2",
+    //"toolchain": "${env:HOME}/xpack-riscv-none-elf-gcc-13.2.0-2"
+}
